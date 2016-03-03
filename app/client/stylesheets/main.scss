@@ -1,0 +1,32 @@
+* {
+	font-family: -apple-system,".SFNSText-Regular","Helvetica Neue","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+body {
+	background-color: #def;
+	// background: url(/images/backgrounds/garrapata-state-park.jpg) no-repeat 100% 100% fixed;
+	bottom: 0;
+	left: 0;
+	overflow-y: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section.main {
+	padding-top: 60px;
+}
+
+select {
+	font-size: 1em;
+}
+
+hr {
+	border-bottom: 1px solid rgba(0,0,0,.2);
+}

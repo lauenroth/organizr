@@ -1,0 +1,101 @@
+header.main {
+	background-color: rgba(51, 102, 153, 0.95);
+	box-shadow: 0 0 10px #369;
+	color: #fff;
+	left: 0;
+	height: 50px;
+	padding: 10px;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+  z-index: 150;
+
+	h1 {
+		font-size: 24px;
+    left: 50px;
+		margin: 0;
+    position: absolute;
+    right: 50px;
+    transition: .2s;
+
+    &.tmp {
+      transform: scale(0,0);
+    }
+	}
+
+  .icon {
+    appearance: none;
+    cursor: pointer;
+    font-size: 0;
+    height: 50px;
+    overflow: hidden;
+    // padding: 13px;
+		position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    transition: background 0.3s;
+    top: 0;
+    width: 50px;
+
+    span {
+      display: block;
+      position: absolute;
+      top: 23px;
+      left: 14px;
+      right: 14px;
+      height: 3px;
+      background: white;
+      transition: background 0s 0.3s;
+
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        content: "";
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+      }
+
+      &:before {
+        top: -7px;
+        transition-property: top, transform;
+      }
+      &:after {
+        bottom: -7px;
+        transition-property: bottom, transform;
+      }
+    }
+
+    &.close-it {
+      span {
+        background: none;
+
+        &:before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &:after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+        &:before,
+        &:after {
+          transition-delay: 0s, 0.3s;
+        }
+      }
+    }
+  }
+
+	#show-menu {
+    cursor: pointer;
+    padding: 13px;
+		position: absolute;
+    right: 0;
+    top: 0;
+	}
+}

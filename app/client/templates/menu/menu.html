@@ -1,0 +1,35 @@
+<template name="Menu">
+
+	<nav class="main">
+		<header>
+			<img src="/images/profiles/jorg.jpg" alt="">
+			<span class="name">Jörg Lauenroth</span>
+		</header>
+		<ul class="smart-lists">
+			<li><a href="/list/inbox">Inbox</a></li>
+			<li><a href="/today">Today</a></li>
+			<li><a href="/week">Next 7 days</a></li>
+			<!-- <li><a href="/"><img src="/images/ic_star.svg"> Starred</a></li> -->
+			<li class="/calendar"><a href="/calendar">Calendar</a></li>
+			<!-- <li><a href="#">Birthdays</a></li> -->
+		</ul>
+		<ul class="lists">
+			{{#each lists}}
+			<li><a href="/list/{{_id}}">{{name}}</a></li>
+			{{/each}}
+			<li class="new-list">
+				<form>
+					<input type="text" placeholder="New list name">
+				</form>
+			</li>
+		</ul>
+		<div class="add-list">+ new list</div>
+
+		<footer>
+			<a href="/settings"><img src="/images/ic_settings.svg"> Settings</a>
+		</footer>
+	</nav>
+
+	<div id="scrim"></div>
+
+</template>

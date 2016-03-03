@@ -1,0 +1,46 @@
+/*****************************************************************************/
+/* Calendar: Style */
+/*****************************************************************************/
+.calendar {
+
+  h2 {
+    font-size: 24px;
+    margin: 15px 0 30px;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+
+    th {
+      padding: 10px 0
+    }
+
+    th, td {
+      text-align: center;
+    }
+
+    td a {
+      background-color: darken(#def, 5);
+      border-radius: 100%;
+      display: inline-block;
+      line-height: 45px;
+      margin: 10px 0;
+      width: 45px;
+    }
+
+    .today a {
+      background-color: #369;
+      color: #fff;
+    }
+
+    .other a {
+      background-color: darken(#def, 2);
+      color: #999;
+    }
+  }
+
+  .card {
+    margin: 0 10px 10px;
+  }
+}

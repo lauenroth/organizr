@@ -1,0 +1,23 @@
+<template name="List">
+
+  <section class="main cards">
+
+    {{#if hasItems}}
+
+      {{#each items}}
+      
+        {{> Item this}}
+
+      {{/each}}
+
+    {{else}}
+
+    <p class="no-content">No items yet.</p>
+
+    {{/if}}
+
+  </section>
+
+  {{> AddItem}}
+
+</template>

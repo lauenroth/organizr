@@ -1,0 +1,16 @@
+<template name="MasterLayout">
+
+  {{#if isNew}}
+
+    {{> Welcome}}
+
+  {{else}}
+
+    {{> Header}}
+
+    {{> yield}}
+
+    {{> Menu}}
+
+  {{/if}}
+</template>
