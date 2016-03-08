@@ -1,0 +1,49 @@
+/*****************************************************************************/
+/* DatePicker: Style */
+/*****************************************************************************/
+.date-picker {
+  background: rgba(0,0,0, .8);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  padding: 70px 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: .2s;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    
+    .predefined {
+      bottom: 20px;
+    }
+  }
+
+  .predefined {
+    background-color: #fff;
+    border-radius: 4px;
+    bottom: -300px;
+    left: 20px;
+    height: 300px;
+    position: fixed;
+    right: 20px;
+    transition: .3s;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-top: 10px;
+      padding-top: 60px;
+      text-align: center;
+      width: 32%;
+    }
+  }
+
+}

@@ -5,6 +5,7 @@ Template.AddItem.close = function() {
   $('body').removeClass('add-item');
   $('header.main .icon').removeClass('close-it');
   $('#item-description').blur().val('').html('');
+  $('.date-picker').removeClass('show');
 };
 
 Template.AddItem.events({
@@ -12,6 +13,10 @@ Template.AddItem.events({
   'click textarea': function() {
     $('body').addClass('add-item');
     $('header.main .icon').addClass('close-it');
+  },
+
+  'click .date': function() {
+    $('.date-picker').addClass('show');
   },
 
   'click .close': function() {
@@ -51,6 +56,7 @@ Template.AddItem.helpers({
 /* AddItem: Lifecycle Hooks */
 /*****************************************************************************/
 Template.AddItem.onCreated(function () {
+  $('#add-item').top('')
 });
 
 Template.AddItem.onRendered(function () {
