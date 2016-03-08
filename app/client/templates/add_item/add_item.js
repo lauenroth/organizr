@@ -56,7 +56,6 @@ Template.AddItem.helpers({
 /* AddItem: Lifecycle Hooks */
 /*****************************************************************************/
 Template.AddItem.onCreated(function () {
-  $('#add-item').top('')
 });
 
 Template.AddItem.onRendered(function () {
