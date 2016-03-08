@@ -2,6 +2,14 @@
 /* Item: Event Handlers */
 /*****************************************************************************/
 Template.Item.events({
+  'click label': function(e) {
+    setTimeout(() => {
+      if ( $('#' + $(e.currentTarget).prop('for')).is(':checked') ) {
+        Items.update({_id: this._id}, {$set: {done: true} });
+      }
+    }, 800);
+
+  }
 });
 
 /*****************************************************************************/

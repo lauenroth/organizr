@@ -14,14 +14,14 @@ Template.List.helpers({
   hasItems: function() {
     let list = Session.get('currentList');
     if (list) {
-      return Items.find({list: list._id}).fetch().length > 0;
+      return Items.find({list: list._id, done : {$exists: false} }).fetch().length > 0;
     }
   },
 
   items: function() {
     let list = Session.get('currentList');
     if (list) {
-      return Items.find({list: list._id});
+      return Items.find({list: list._id, done : {$exists: false} });
     }
   },
 
