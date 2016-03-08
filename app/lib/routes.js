@@ -5,10 +5,8 @@ Router.configure({
 });
 
 
-Router.route('/', {
-  name: 'home',
-  controller: 'HomeController',
-  where: 'client'
+Router.route('/', function() {
+  Router.go('/list/inbox');
 });
 
 Router.route('today');
