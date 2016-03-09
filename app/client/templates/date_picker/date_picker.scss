@@ -16,7 +16,7 @@
   &.show {
     opacity: 1;
     visibility: visible;
-    
+
     .predefined {
       bottom: 20px;
     }
@@ -37,12 +37,17 @@
       padding: 0;
     }
     li {
+      background: url(/images/ic_event.svg) no-repeat center;
       display: inline-block;
       list-style: none;
       margin-top: 10px;
       padding-top: 60px;
       text-align: center;
       width: 32%;
+
+      &.none {
+        background: none;
+      }
     }
   }
 

@@ -7,7 +7,17 @@ Template.DatePicker.events({
     $('.date-picker').removeClass('show');
   },
 
-  'click li': function() {
+  'click li': function(e) {
+    let $date = $(e.target);
+    let date = $date.attr('class');
+    $('.item-date').val(date);
+    if (date) {
+      $('.item-date-info').html($date.html()).addClass('show');
+    }
+    else {
+      $('.item-date-info').html('').removeClass('show');
+    }
+
     $('.date-picker').removeClass('show');
   },
 

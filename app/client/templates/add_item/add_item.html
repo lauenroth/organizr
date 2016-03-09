@@ -1,14 +1,16 @@
 <template name="AddItem">
 
   <form id="add-item">
-  	<textarea id="item-description" placeholder='Add item to "{{list.name}}"' rows="5"></textarea>
+  	<textarea id="item-description" placeholder='Add item to "{{list.name}}"' rows="5" required>{{#if isEdit}}EDIT{{/if}}</textarea>
 
     <footer>
+      <div class="item-date-info"></div>
       <img src="/images/ic_event.svg" class="date">
-      <img src="/images/ic_star.svg" class="star">
-      <img src="/images/ic_share.svg" class="share">
-      <img src="/images/ic_attachment.svg" class="attachment">
+      <!-- <img src="/images/ic_star.svg" class="star"> -->
+      <!-- <img src="/images/ic_share.svg" class="share"> -->
+      <!-- <img src="/images/ic_attachment.svg" class="attachment"> -->
       <button type="submit">Add</button>
+      <input type="hidden" name="date" class="item-date">
     </footer>
 
   </form>

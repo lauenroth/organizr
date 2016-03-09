@@ -3,13 +3,11 @@
 /*****************************************************************************/
 Template.Header.events({
   'click .icon': function(e) {
-		let $icon = $(e.currentTarget);
-    if (!$icon.hasClass('close-it')) {
+    if (!$(e.currentTarget).hasClass('close-it')) {
       $('body').addClass('show-menu');
     }
     else {
-      $('body').removeClass('add-item');
-      $icon.removeClass('close-it');
+      Template.AddItem.close();
     }
 	},
 });

@@ -4,7 +4,7 @@
 #add-item {
   background-color: #fff;
 	bottom: 0;
-	box-shadow: 0 0 10px #def;
+	box-shadow: 0 0 4px #abc;
 	left: 0;
 	position: fixed;
   top: calc(100% - 50px);
@@ -44,6 +44,34 @@
     cursor: pointer;
     display: inline-block;
     margin: 0 0 0 12px;
+  }
+
+  .item-date-info {
+    background-color: #369;
+    color: #fff;
+    font-size: 12px;
+    left: 11px;
+    margin-top: -31px;
+    opacity: 0;
+    padding: 4px 8px;
+    position: absolute;
+    transition: .2s;
+    visibility: hidden;
+
+    &:before {
+      border: 5px solid #369;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: '';
+      margin-top: 15px;
+      position: absolute;
+      transform: rotate(-45deg);
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
 }

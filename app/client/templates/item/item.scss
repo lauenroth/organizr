@@ -22,8 +22,18 @@
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 0 4px #abc;
+  height: 60px;
 	margin-bottom: 10px;
 	padding: 10px;
+  transition: .3s;
+
+  &.full {
+    height: 400px;
+
+    h3 {
+      white-space: normal;
+    }
+  }
 
 	.time {
 		color: #666;
@@ -33,10 +43,22 @@
 		font-size: 18px;
 		font-weight: normal;
 		margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.no-date {
+      line-height: 28px;
+      padding-top: 6px;
+    }
 	}
 	p {
 		margin: 10px 0 0;
 	}
+
+  .details {
+    display: none;
+  }
 }
 
 .checkbox {

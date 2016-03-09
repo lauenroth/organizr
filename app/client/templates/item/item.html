@@ -7,8 +7,14 @@
       <label for="check-{{_id}}"></label>
     </div>
 
-    <div class="time">Today</div>
-    <h3>{{description}}</h3>
+    {{#if date}}
+      <div class="time">{{readableDate}}</div>
+      <h3>{{description}}</h3>
+    {{else}}
+      <h3 class="no-date">{{description}}</h3>
+    {{/if}}
+
+    <div class="details">Details</div>
   </div>
 
 </template>
