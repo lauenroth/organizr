@@ -1,8 +1,20 @@
 <template name="Today">
 
-  <section class="main">
+  <section class="main cards">
+
+    {{#if hasItems}}
+
+      {{#each items}}
+
+        {{> Item this}}
+
+      {{/each}}
+
+    {{else}}
 
     <p class="no-content">Nothing planned for today.</p>
+
+    {{/if}}
 
   </section>
 
