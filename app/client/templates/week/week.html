@@ -1,8 +1,20 @@
 <template name="Week">
 
-  <section class="main">
+  <section class="main cards">
+
+    {{#if hasItems}}
+
+      {{#each items}}
+
+        {{> Item this}}
+
+      {{/each}}
+
+    {{else}}
 
     <p class="no-content">Nothing planned for the next 7 days.</p>
+
+    {{/if}}
 
   </section>
 
