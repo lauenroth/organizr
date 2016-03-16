@@ -61,13 +61,32 @@ Template.AddItem.events({
     if (editItem) {
       item.updated = new Date();
       Items.update({_id: editItem._id}, item);
+      info('Item has been updated');
     }
     else {
       item.created = new Date();
       Items.insert(item);
+      info('Item has been added');
     }
 
     Template.AddItem.close();
+  },
+
+  'click .sub-menu-icon': function() {
+    $('body').addClass('show-sub-menu');
+  },
+
+  'click .sub-menu li': function() {
+    $('body').removeClass('show-sub-menu');
+  },
+
+  'click .delete': function() {
+
+    confirmDialog('Do you really wanna delete this item?', function() {
+      info('Item has been deleted.');
+      Items.remove({_id: Session.get('editItem')._id});
+      Template.AddItem.close();
+    });
   },
 
 });
@@ -94,6 +113,7 @@ Template.AddItem.onCreated(function () {
 });
 
 Template.AddItem.onRendered(function () {
+  Session.set('editItem', false);
 });
 
 Template.AddItem.onDestroyed(function () {

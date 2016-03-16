@@ -10,6 +10,7 @@
   top: calc(100% - 50px);
   transition: .2s;
 	width: 100%;
+  z-index: 1000;
 
 	textarea {
 		border: none;

@@ -1,10 +1,18 @@
 <template name="AddItem">
 
+  {{#if editItem}}
+    <img src="/images/ic_submenu.svg" alt="Edit item options" class="sub-menu-icon">
+    <ul class="sub-menu">
+      <!-- <li>Move to</li> -->
+      <li class="delete">Delete</li>
+    </ul>
+  {{/if}}
+
   <form id="add-item">
   	<textarea id="item-description" placeholder='Add item to "{{list.name}}"' rows="5" required>{{#if editItem}}{{editItem.description}}{{/if}}</textarea>
 
     <footer>
-      <div class="item-date-info"></div>
+      <div class="item-date-info">{{#if editItem}} {{/if}}</div>
       <img src="/images/ic_event.svg" class="date">
       <!-- <img src="/images/ic_star.svg" class="star"> -->
       <!-- <img src="/images/ic_share.svg" class="share"> -->
