@@ -18,7 +18,10 @@ nav.main {
 		border-bottom: 1px solid darken(#313643, 5);
 		color: #fff;
 		height: 60px;
-		padding: 15px;
+
+		a {
+			padding: 15px;
+		}
 
 		img {
 			border-radius: 100%;

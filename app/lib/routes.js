@@ -35,4 +35,7 @@ Router.route('/list/:_id', {
   }
 });
 Router.route('calendar');
+
+Router.route('profile');
+
 Router.route('settings');
