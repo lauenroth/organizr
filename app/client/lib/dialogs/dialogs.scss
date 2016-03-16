@@ -1,0 +1,64 @@
+#info,
+#error {
+  bottom: 20px;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  transition: .3s;
+  visibility: hidden;
+  z-index: 900;
+
+  &.show {
+    bottom: 60px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  span {
+    background-color: #369;
+    border-radius: 4px;
+    color: #fff;
+    padding: 5px 10px;
+  }
+}
+
+#error span {
+  background-color: #a22;
+}
+
+#confirm {
+  background-color: rgba(0,0,0, .9);
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1200;
+
+  p {
+    font-size: 28px;
+    padding: 20px;
+  }
+
+  .confirm,
+  .cancel {
+    background-color: #369;
+    border: none;
+    bottom: 65px;
+    font-size: 22px;
+    left: 0;
+    line-height: 60px;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    width: 100%;
+  }
+
+  .cancel {
+    background-color: #999;
+    bottom: 0;
+  }
+}
