@@ -3,7 +3,7 @@
 /*****************************************************************************/
 
 Template.Menu.close = function() {
-	$('body').removeClass('show-menu');
+	$('body').removeClass('show-menu').removeClass('show-sub-menu');
 };
 
 Template.Menu.events({

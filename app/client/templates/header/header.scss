@@ -99,3 +99,44 @@ header.main {
     top: 0;
 	}
 }
+
+.sub-menu-icon {
+	padding: 13px;
+	position: fixed;
+	z-index: 150;
+}
+
+.sub-menu {
+	background: #fff;
+	box-shadow: 0 0 10px #666;
+	border-radius: 2px;
+	left: 10px;
+	min-width: 175px;
+	opacity: 0;
+	padding: 0;
+	position: fixed;
+	top: 10px;
+	transition: .3s;
+	visibility: hidden;
+	z-index: 1050;
+
+	li {
+		font-size: 18px;
+		list-style: none;
+		padding: 10px 15px;
+	}
+}
+
+.show-sub-menu {
+
+	#scrim {
+		// opacity: .1;
+		visibility: visible;
+	}
+
+	.sub-menu {
+		opacity: 1;
+		visibility: visible;
+	}
+
+}
