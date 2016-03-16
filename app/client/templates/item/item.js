@@ -4,6 +4,7 @@
 Template.Item.events({
 
   'click label': function(e) {
+
     setTimeout(() => {
       if ( $('#' + $(e.target).prop('for')).is(':checked') ) {
         Items.update({_id: this._id}, {$set: {done: true} });
@@ -12,14 +13,23 @@ Template.Item.events({
   },
 
   'click .card': function(e) {
-    const $card = $(e.currentTarget);
-    if ($card.hasClass('full')) {
-      $card.removeClass('full');
+    const $target = $(e.target);
+
+    // show details / edit form when use did not click the checkbox
+    if (!$target.prop('for') && !$target.prop('type')) {
+      Session.set('editItem', this);
+      Template.AddItem.show();
     }
-    else {
-      $('.card.full').removeClass('full');
-      $card.addClass('full');
-    }
+  },
+
+  'click img.edit': function(e) {
+    e.preventDefault();
+    const $card = $(e.target).parent();
+    const canEdit = !$card.hasClass('edit');
+
+    Session.set('editItem', canEdit ? this._id : null);
+    $card.find('.description').prop('readonly', !canEdit);
+    $card.toggleClass('edit');
   },
 
 });

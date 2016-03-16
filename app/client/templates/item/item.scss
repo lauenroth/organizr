@@ -27,29 +27,27 @@
 	padding: 10px;
   transition: .3s;
 
-  &.full {
-    height: 400px;
-
-    h3 {
-      white-space: normal;
-    }
-  }
-
 	.time {
 		color: #666;
+		margin-left: 45px;
+		transition: .3s;
 	}
 
-	h3 {
+  .description {
+    float: right;
 		font-size: 18px;
 		font-weight: normal;
-		margin: 0;
+    line-height: 25px;
+    margin: -5px 0 0;
     overflow: hidden;
+    padding: 0;
     text-overflow: ellipsis;
+    transition: .3s;
     white-space: nowrap;
+    width: calc(100% - 70px);
 
     &.no-date {
-      line-height: 28px;
-      padding-top: 6px;
+      line-height: 50px;
     }
 	}
 	p {
@@ -68,6 +66,7 @@
     display: none;
   }
   label {
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
     display: block;

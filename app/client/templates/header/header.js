@@ -22,7 +22,12 @@ Template.Header.helpers({
       Session.set('title', 'Organizr');
     }
     return Session.get('title');
-  }
+  },
+
+  tempTitle: function() {
+    return Session.get('tempTitle');
+  },
+
 });
 
 /*****************************************************************************/

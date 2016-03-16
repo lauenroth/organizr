@@ -1,6 +1,11 @@
 /*****************************************************************************/
 /* DatePicker: Event Handlers */
 /*****************************************************************************/
+Template.DatePicker.reset = function() {
+  $('.item-date').val('');
+  $('.item-date-info').html('').removeClass('show');
+};
+
 Template.DatePicker.events({
 
   'click .date-picker': function() {
@@ -15,7 +20,7 @@ Template.DatePicker.events({
       $('.item-date-info').html($date.html()).addClass('show');
     }
     else {
-      $('.item-date-info').html('').removeClass('show');
+      Template.DatePicker.reset();
     }
 
     $('.date-picker').removeClass('show');
