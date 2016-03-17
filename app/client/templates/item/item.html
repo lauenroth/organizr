@@ -8,7 +8,7 @@
     </div>
 
     {{#if date}}
-      <div class="time">{{readableDate}}</div>
+      <div class="time{{#if isDue}} due{{/if}}">{{readableDate}}</div>
       <h3 class="description">{{description}}</h3>
     {{else}}
       <h3 class="description no-date">{{description}}</h3>

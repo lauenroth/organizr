@@ -38,12 +38,33 @@ Template.Item.events({
 /* Item: Helpers */
 /*****************************************************************************/
 Template.Item.helpers({
+
+  isDue: function() {
+    return moment(this.date).diff(moment(), 'days') < 0;
+  },
+
   readableDate: function() {
-    let date = moment(this.date).calendar();
-    let hasTime = date.indexOf(' at');
-    if (hasTime > 0) {
-      return date.substr(0, hasTime);
+
+    let date = moment(this.date);
+
+    const dayDifference = date.diff(moment(), 'days');
+    switch (dayDifference) {
+      case -1: return 'Yesterday'; break;
+      case 0: return 'Today'; break;
+      case 1: return 'Tomorrow'; break;
+      default:
+        if (dayDifference > -4 && dayDifference <= 7) return date.fromNow();
+        return date.calendar();
     }
+
+
+    // let date = moment(this.date).calendar();
+    //
+    // console.log(date);
+    // let hasTime = date.indexOf(' at');
+    // if (hasTime > 0) {
+    //   // return date.substr(0, hasTime);
+    // }
     return date;
   }
 });
