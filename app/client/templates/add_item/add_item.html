@@ -12,7 +12,7 @@
   	<textarea id="item-description" placeholder='Add item to "{{list.name}}"' rows="5" required>{{#if editItem}}{{editItem.description}}{{/if}}</textarea>
 
     <footer>
-      <div class="item-date-info">{{#if editItem}} {{/if}}</div>
+      <div class="item-date-info {{#if editItem.date}}show{{/if}}">{{#if editItem}}{{dateInfo editItem.date}}{{/if}}</div>
       <img src="/images/ic_event.svg" class="date">
       <!-- <img src="/images/ic_star.svg" class="star"> -->
       <!-- <img src="/images/ic_share.svg" class="share"> -->

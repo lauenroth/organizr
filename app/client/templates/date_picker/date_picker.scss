@@ -12,6 +12,7 @@
   top: 0;
   transition: .2s;
   visibility: hidden;
+  z-index: 1000;
 
   &.show {
     opacity: 1;

@@ -102,6 +102,10 @@ Template.AddItem.helpers({
 
   editItem: function() {
     return Session.get('editItem');
+  },
+
+  dateInfo: function(date) {
+    return moment(date).fromNow();
   }
 
 });
