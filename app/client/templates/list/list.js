@@ -10,17 +10,19 @@ Template.List.events({
 /* List: Helpers */
 /*****************************************************************************/
 Template.List.Items = function() {
-  let list = Session.get('currentList');
+  const list = Session.get('currentList');
   if (list) {
-    return Items.find({list: list._id, done : {$exists: false} }, {$sort: {date: 1} });
+    const itemsWithDate = Items.find({list: list._id, done : {$exists: false}, date: {$exists: true} }, {sort: {date: 1} }).fetch();
+    const itemsWithoutDate = Items.find({list: list._id, done : {$exists: false}, date: {$exists: false} }).fetch();
+    return itemsWithDate.concat(itemsWithoutDate);
   }
 }
 Template.List.helpers({
 
   hasItems: function() {
-    let items = Template.List.Items();
+    const items = Template.List.Items();
     if (items) {
-      return items.fetch().length > 0;
+      return items.length > 0;
     }
     return false;
   },
