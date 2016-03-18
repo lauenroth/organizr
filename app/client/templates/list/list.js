@@ -12,8 +12,8 @@ Template.List.events({
 Template.List.Items = function() {
   const list = Session.get('currentList');
   if (list) {
-    const itemsWithDate = Items.find({list: list._id, done : {$exists: false}, date: {$exists: true} }, {sort: {date: 1} }).fetch();
-    const itemsWithoutDate = Items.find({list: list._id, done : {$exists: false}, date: {$exists: false} }).fetch();
+    const itemsWithDate = Items.find({list: list._id, owner: Meteor.userId(), done : {$exists: false}, date: {$exists: true} }, {sort: {date: 1} }).fetch();
+    const itemsWithoutDate = Items.find({list: list._id, owner: Meteor.userId(), done : {$exists: false}, date: {$exists: false} }).fetch();
     return itemsWithDate.concat(itemsWithoutDate);
   }
 }

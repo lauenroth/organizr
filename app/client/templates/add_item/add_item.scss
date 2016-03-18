@@ -94,6 +94,10 @@ header.main.add-item {
 
 body.add-item {
 
+  #error {
+    z-index: 1100;
+  }
+
   section.cards {
     opacity: .8;
     transform: scale(.8,.8);

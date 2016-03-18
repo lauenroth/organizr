@@ -10,7 +10,7 @@ Template.Week.Items = function() {
     end: moment().add(7, 'days').endOf('day').toDate(),
   };
 
-  return Items.find({date: {$gte: week.start, $lt: week.end}});
+  return Items.find({owner: Meteor.userId(), date: {$gte: week.start, $lt: week.end}}, {sort: {date: 1}});
 }
 
 /*****************************************************************************/

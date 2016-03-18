@@ -46,30 +46,37 @@ Template.AddItem.events({
     let item = {
       description: $('#item-description').val(),
       list: Session.get('currentList')._id,
+      owner: Meteor.userId(),
     };
-    let date = $('.item-date').val();
-    switch (date) {
-      case 'today': item.date = moment().endOf('day').toDate(); break;
-      case 'tomorrow': item.date = moment().add(1, 'day').endOf('day').toDate(); break;
-      case 'this-week': item.date = moment().endOf('week').endOf('day').toDate(); break;
-      case 'next-week': item.date = moment().add(1, 'week').endOf('week').endOf('day').toDate(); break;
-      case 'this-month': item.date = moment().endOf('month').endOf('day').toDate(); break;
-      case 'next-month': item.date = moment().add(1, 'month').endOf('month').endOf('day').toDate(); break;
-      case '': break;
-      default: item.date = moment(date).toDate();
-    }
-    if (editItem) {
-      item.updated = new Date();
-      Items.update({_id: editItem._id}, item);
-      info('Item has been updated');
-    }
-    else {
-      item.created = new Date();
-      Items.insert(item);
-      info('Item has been added');
+
+    if (item.description.trim().length === 0) {
+      error('A description is mandatory.');
     }
 
-    Template.AddItem.close();
+    else {
+
+      let date = $('.item-date').val();
+      switch (date) {
+        case 'today': item.date = moment().endOf('day').toDate(); break;
+        case 'tomorrow': item.date = moment().add(1, 'day').endOf('day').toDate(); break;
+        case 'this-week': item.date = moment().endOf('week').endOf('day').toDate(); break;
+        case 'next-week': item.date = moment().add(1, 'week').endOf('week').endOf('day').toDate(); break;
+        case 'this-month': item.date = moment().endOf('month').endOf('day').toDate(); break;
+        case 'next-month': item.date = moment().add(1, 'month').endOf('month').endOf('day').toDate(); break;
+        case '': break;
+        default: item.date = moment(date).toDate();
+      }
+      if (editItem) {
+        item.updated = new Date();
+        Items.update({_id: editItem._id}, item);
+      }
+      else {
+        item.created = new Date();
+        Items.insert(item);
+      }
+
+      Template.AddItem.close();
+    }
   },
 
   'click .sub-menu-icon': function() {

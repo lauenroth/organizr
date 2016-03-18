@@ -28,7 +28,8 @@ Template.Menu.events({
 		let input = $('.new-list input');
 		let list = {
 			name: input.val(),
-			updated: new Date(),
+			created: new Date(),
+			owner: Meteor.userId(),
 		};
 		if (list.name.length > 0) {
 			let listId = Lists.insert(list);
@@ -47,7 +48,7 @@ Template.Menu.events({
 Template.Menu.helpers({
 
 	lists: function() {
-		return Lists.find();
+		return Lists.find({owner: Meteor.userId()});
 	},
 
 });

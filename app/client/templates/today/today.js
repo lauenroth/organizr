@@ -10,7 +10,7 @@ Template.Today.Items = function() {
     end: moment().endOf('day').toDate(),
   };
 
-  return Items.find({date: {$gte: today.start, $lte: today.end}});
+  return Items.find({owner: Meteor.userId(), date: {$gte: today.start, $lte: today.end}}, {sort: {date: 1} });
 }
 
 /*****************************************************************************/

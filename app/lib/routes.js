@@ -24,12 +24,15 @@ Router.route('/list/:_id', {
       list.name = 'Inbox';
     }
     else {
-      list = Lists.findOne({_id: id});
+      list = Lists.findOne({_id: id, owner: Meteor.userId()});
     }
 
     if (list) {
       Session.set('title', list.name);
       Session.set('currentList', list);
+    }
+    else {
+      Router.go('/');
     }
     return list;
   }
