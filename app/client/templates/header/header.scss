@@ -32,7 +32,7 @@ header.main {
     overflow: hidden;
     // padding: 13px;
 		position: absolute;
-    right: 0;
+    left: 0;
     text-indent: -9999px;
     transition: background 0.3s;
     top: 0;
@@ -103,6 +103,7 @@ header.main {
 .sub-menu-icon {
 	padding: 13px;
 	position: fixed;
+	right: 0;
 	z-index: 150;
 }
 
@@ -110,7 +111,7 @@ header.main {
 	background: #fff;
 	box-shadow: 0 0 10px #666;
 	border-radius: 2px;
-	left: 10px;
+	right: 10px;
 	min-width: 175px;
 	opacity: 0;
 	padding: 0;
@@ -130,7 +131,7 @@ header.main {
 .show-sub-menu {
 
 	#scrim {
-		// opacity: .1;
+		opacity: .2;
 		visibility: visible;
 	}
 
