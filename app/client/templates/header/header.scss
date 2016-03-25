@@ -9,6 +9,7 @@ header.main {
 	right: 0;
 	text-align: center;
 	top: 0;
+	transition: .2s;
   z-index: 150;
 
 	h1 {
@@ -30,11 +31,10 @@ header.main {
     font-size: 0;
     height: 50px;
     overflow: hidden;
-    // padding: 13px;
 		position: absolute;
     left: 0;
     text-indent: -9999px;
-    transition: background 0.3s;
+    transition: .2s;
     top: 0;
     width: 50px;
 
@@ -138,6 +138,23 @@ header.main {
 	.sub-menu {
 		opacity: 1;
 		visibility: visible;
+	}
+
+}
+
+
+@media (min-width: 750px) {
+
+	header.main {
+		margin-left: 220px;
+
+		.icon {
+			opacity: 0;
+		}
+	}
+
+	.add-item header.main .icon {
+		opacity: 1;
 	}
 
 }

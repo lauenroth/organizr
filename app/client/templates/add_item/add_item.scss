@@ -7,9 +7,9 @@
 	box-shadow: 0 0 4px #abc;
 	left: 0;
 	position: fixed;
+  right: 0;
   top: calc(100% - 50px);
   transition: .2s;
-	width: 100%;
   z-index: 1000;
 
 	textarea {
@@ -140,4 +140,13 @@ body.add-item {
       transform: scale(1,1);
     }
   }
+}
+
+
+@media (min-width: 750px) {
+
+  #add-item {
+    left: 220px;
+  }
+
 }
