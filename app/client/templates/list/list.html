@@ -1,19 +1,37 @@
 <template name="List">
 
+  <img src="/images/ic_submenu.svg" alt="" class="sub-menu-icon">
+  <ul class="sub-menu">
+    <li class="toggle-done">Show done tasks</li>
+    {{#unless isSpecialList }}
+    <!-- <li class="edit">Edit list</li> -->
+    <li class="delete">Delete list</li>
+    {{/unless}}
+  </ul>
+
   <section class="main cards">
 
     {{#if hasItems}}
 
       {{#each items}}
-      
+
         {{> Item this}}
 
       {{/each}}
 
-    {{else}}
+    {{/if}}
 
-    <p class="no-content">No items yet.</p>
+    {{#if showCompletedTasks}}
+      {{#if hasCompletedItems}}
+      <h4>Completed tasks</h4>
+        {{#each completedItems}}
+          {{> Item this}}
+        {{/each}}
+      {{/if}}
+    {{/if}}
 
+    {{#if hasNoItemsAtAll}}
+      <p class="no-content">No items yet.</p>
     {{/if}}
 
   </section>
