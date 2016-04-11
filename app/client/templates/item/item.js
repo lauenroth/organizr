@@ -6,8 +6,12 @@ Template.Item.events({
   'click label': function(e) {
 
     setTimeout(() => {
-      if ( $('#' + $(e.target).prop('for')).is(':checked') ) {
+      const isDone = $('#' + $(e.target).prop('for')).is(':checked');
+      if (isDone) {
         Items.update({_id: this._id}, {$set: {done: true} });
+      }
+      else {
+        Items.update({_id: this._id}, {$unset: {done: ''} });
       }
     }, 800);
   },
@@ -41,6 +45,10 @@ Template.Item.helpers({
 
   isDue: function() {
     return moment(this.date).diff(moment(), 'days') < 0;
+  },
+
+  isChecked: function() {
+    return this.done === true ? 'checked' : '';
   },
 
   readableDate: function() {

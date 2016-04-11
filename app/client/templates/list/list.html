@@ -2,7 +2,13 @@
 
   <img src="/images/ic_submenu.svg" alt="" class="sub-menu-icon">
   <ul class="sub-menu">
-    <li class="toggle-done">Show done tasks</li>
+    <li class="toggle-done">
+      {{#if showCompletedTasks}}
+      Hide completed tasks
+      {{else}}
+      Show completed tasks
+      {{/if}}
+    </li>
     {{#unless isSpecialList }}
     <!-- <li class="edit">Edit list</li> -->
     <li class="delete">Delete list</li>

@@ -25,7 +25,7 @@ Template.List.events({
   },
 
   'click .sub-menu .toggle-done': function() {
-    Session.set('showCompletedTasks', !!Session.get('showCompletedTasks'));
+    Session.set('showCompletedTasks', !!!Session.get('showCompletedTasks'));
   }
 
 });
