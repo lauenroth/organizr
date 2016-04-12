@@ -57,12 +57,12 @@ Template.AddItem.events({
 
       let date = $('.item-date').val();
       switch (date) {
-        case 'today': item.date = moment().endOf('day').toDate(); break;
-        case 'tomorrow': item.date = moment().add(1, 'day').endOf('day').toDate(); break;
-        case 'this-week': item.date = moment().endOf('week').endOf('day').toDate(); break;
-        case 'next-week': item.date = moment().add(1, 'week').endOf('week').endOf('day').toDate(); break;
-        case 'this-month': item.date = moment().endOf('month').endOf('day').toDate(); break;
-        case 'next-month': item.date = moment().add(1, 'month').endOf('month').endOf('day').toDate(); break;
+        case 'today': item.date = moment().endOf('day').toDate(); item.dateAccuracy = 'day'; break;
+        case 'tomorrow': item.date = moment().add(1, 'day').endOf('day').toDate(); item.dateAccuracy = 'day'; break;
+        case 'this-week': item.date = moment().endOf('week').endOf('day').toDate(); item.dateAccuracy = 'week'; break;
+        case 'next-week': item.date = moment().add(1, 'week').endOf('week').endOf('day').toDate(); item.dateAccuracy = 'week'; break;
+        case 'this-month': item.date = moment().endOf('month').endOf('day').toDate(); item.dateAccuracy = 'month'; break;
+        case 'next-month': item.date = moment().add(1, 'month').endOf('month').endOf('day').toDate(); item.dateAccuracy = 'month'; break;
         case '': break;
         default: item.date = moment(date).toDate();
       }

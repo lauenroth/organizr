@@ -55,14 +55,41 @@ Template.Item.helpers({
 
     let date = moment(this.date);
 
-    const dayDifference = date.diff(moment(), 'days');
-    switch (dayDifference) {
-      case -1: return 'Yesterday'; break;
-      case 0: return 'Today'; break;
-      case 1: return 'Tomorrow'; break;
-      default:
-        if (dayDifference > -4 && dayDifference <= 7) return date.fromNow();
-        return date.calendar();
+    switch (this.dateAccuracy) {
+
+      case 'day':
+        const dayDifference = date.diff(moment(), 'days');
+        switch (dayDifference) {
+          case -1: return 'Yesterday'; break;
+          case 0: return 'Today'; break;
+          case 1: return 'Tomorrow'; break;
+          default:
+            if (dayDifference > -4 && dayDifference <= 7) return date.fromNow();
+            return date.calendar();
+        }
+        break;
+      case 'week':
+        const weekDifference = date.diff(moment(), 'weeks');
+        switch(weekDifference) {
+          case -1: return 'Last week'; break;
+          case 0: return 'This week'; break;
+          case 1: return 'Next week'; break;
+          default:
+            if (weekDifference > -2 && weekDifference <= 2) return date.fromNow();
+            return date.calendar();
+        }
+        break;
+      case 'month':
+        const monthDifference = date.diff(moment(), 'months');
+        switch(monthDifference) {
+          case -1: return 'Last month'; break;
+          case 0: return 'This month'; break;
+          case 1: return 'Next month'; break;
+          default:
+            if (monthDifference > -2 && monthDifference <= 2) return date.fromNow();
+            return date.calendar();
+        }
+        break;
     }
 
 
