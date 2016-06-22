@@ -12,7 +12,6 @@ session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
-standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 fourseven:scss          # SASS support
@@ -25,8 +24,7 @@ dburles:collection-helpers
 aldeed:simple-schema
 aldeed:collection2
 
-
-yogiben:admin           # Little CMS like administration toool
+yogiben:admin           # Little CMS like administration tool
 
 accounts-base           # Allow accounts
 accounts-password       # Allow accounts with password
@@ -35,5 +33,8 @@ accounts-facebook       # Allow accounts with Facebook
 
 hammer:hammer           # Hammer.js Touch library
 momentjs:moment         # Date and time related library
-useraccounts:core
+#useraccounts:core
 aldeed:tabular
+anti:i18n               # Internationalization
+standard-minifier-css
+standard-minifier-js

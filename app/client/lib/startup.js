@@ -19,4 +19,13 @@ Meteor.startup(function() {
       });
     });
   }
+
+  // set default language
+  var localeFromBrowser = window.navigator.userLanguage || window.navigator.language;
+  var locale = 'en';
+  if (localeFromBrowser.match(/de/)) {
+    locale = 'de';
+  }
+  i18n.setLanguage(locale);
+  moment.locale(locale);
 });
